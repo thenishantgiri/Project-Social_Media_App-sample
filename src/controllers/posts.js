@@ -11,11 +11,11 @@ async function createNewPost(userId, title, body) {
 }
 
 /**
- * showAllPosts({username: ''})
- * showAllPosts({title: ''})
+ * findAllPosts({username: ''})
+ * findAllPosts({title: ''})
  */
 
-async function showAllPosts(query) {
+async function findAllPosts(query) {
   // TODO: handle query params
   const posts = await Posts.findAll({
     include: [Users],
@@ -26,7 +26,7 @@ async function showAllPosts(query) {
 
 module.exports = {
   createNewPost,
-  showAllPosts,
+  findAllPosts,
 };
 
 /* Test Code 

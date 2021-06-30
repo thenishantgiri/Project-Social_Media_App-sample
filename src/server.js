@@ -9,6 +9,10 @@ const { postsRoute } = require("./routes/posts");
 
 const app = express();
 
+// for handling post Requests
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // mounting api (s)
 app.use("/api/users", usersRoute);
 app.use("/api/posts", postsRoute);
