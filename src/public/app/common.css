@@ -1,6 +1,7 @@
 #navbar {
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 
 #footer {
@@ -11,6 +12,7 @@
   background-color: var(--light);
 }
 
-#content {
+/* used to prevent our page from collapsing without having any contents */
+/* #content {
   height: 2000px;
-}
+} */
