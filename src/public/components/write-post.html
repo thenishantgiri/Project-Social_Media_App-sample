@@ -1,0 +1,22 @@
+<div class="container my-2">
+    <h1 class="display-4 text-center">Write Post</h1>
+
+    <!-- Write Post Form -->
+    <form action="/" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title">
+            <small class="form-text text-muted">Please write the title of your post.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="body">Body</label>
+            <textarea class="form-control" id="body" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+
+    </form>
+</div>
+
+<script src="../app/write-post.js"></script>

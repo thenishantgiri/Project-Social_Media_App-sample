@@ -1,5 +1,9 @@
 const { Router } = require("express");
-const { findAllPosts, createNewPost } = require("../../controllers/posts");
+const {
+  findAllPosts,
+  createNewPost,
+  getPostsByUsername,
+} = require("../../controllers/posts");
 
 const route = Router();
 
@@ -7,6 +11,13 @@ route.get("/", async (req, res) => {
   const post = await findAllPosts();
 
   res.status(200).send(post);
+});
+
+route.get("/getPostsByUsername", async (req, res) => {
+
+  const posts = await getPostsByUsername(currentUser.username);
+
+  res.status(200).send(posts);
 });
 
 route.post("/", async (req, res) => {

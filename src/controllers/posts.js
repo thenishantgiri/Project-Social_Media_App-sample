@@ -24,9 +24,25 @@ async function findAllPosts(query) {
   return posts;
 }
 
+async function getUserId(username) {
+  const userId = await Users.findOne({
+    where: { username: username },
+  });
+
+  return userId.id;
+}
+
+async function getPostsByUsername(username) {
+  return await Posts.findAll({
+    where: { userId: await getUserId(username) },
+    include: [Users],
+  });
+}
+
 module.exports = {
   createNewPost,
   findAllPosts,
+  getPostsByUsername
 };
 
 /* Test Code 
